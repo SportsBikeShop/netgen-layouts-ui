@@ -109,7 +109,7 @@ Draggable.prototype.create_new_block = function() {
 
 
   var new_block = Core.model_helper.init_block_from_type(this.model, attributes);
-  var view_block = Core.blocks.create_view(identifier, new_block);
+  var view_block = Core.blocks.create_view(this.model.get('definition_identifier'), new_block);
   this.$drag_item.after(view_block.$el);
 
   if(this.parent_block_id()){
